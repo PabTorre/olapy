@@ -11,8 +11,8 @@ setup(name='olapy',
 	long_description = open('README.txt').read(),
 	##scripts = ['bin/examples.py'],
 	license = 'LICENSE.txt',
-	author='Pablo Torre',
-	url = 'www.fractalsoft.biz',
+	author='PabTorre',
+	
 	author_email = 'xctico@gmail.com',
 	packages=['olapy'],
 	requires=[

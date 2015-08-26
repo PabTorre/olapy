@@ -5,7 +5,7 @@ Created on Tue Sep 1 09:22:26 2014
 generic db handler for postgresql
 
 
-@author: ptorre
+@author: pabtorre
 """
 import pandas.io.sql as psql
 import psycopg2 

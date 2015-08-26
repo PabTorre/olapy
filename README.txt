@@ -4,7 +4,7 @@ OLAPy
 
 ===============================================
 
-Author: Pablo Torre <pablo@fractalsoft.biz>
+Author: Pablo Torre <xctico@gmail.com>
 
 Date: Aug 2015
 
