@@ -69,7 +69,7 @@ def slice_cube(fact_table, dimensions, null_dim, sql_aggregates):
     if sql_groups !='':
         sql_groups = 'GROUP BY '+sql_groups[:-1]    
 
-    
+    # builds the aggregates string. 
 
     sql = str(
             """
@@ -104,6 +104,10 @@ def scramble_cube(fact_table,dimensions = []):
         slice_cube(ft, dimensions, null_dim=[1]) -- face 
         slice_cube(ft, dimensions, null_dim=[2]) -- face
         slice_cube(ft, dimensions, null_dim=[]) -- center
+        
+        
+        
+    
     """
     
     # corner
@@ -118,4 +122,20 @@ def scramble_cube(fact_table,dimensions = []):
     
     return sql
 
+
+def build_cube(cube_name, cube_sql):
+    """
+    Attach a header to the cube_sql query and write it to db. 
+    
+    """
+    sql_header = """BEGIN; 
+                DROP VIEW IF EXISTS {0};
+                END; 
+                BEGIN;
+                CREATE VIEW {0}
+                AS 
+             """.format(cube_name)
+             
+    db.write_db(sql_header + cube_sql + "; END;")
+    
 
